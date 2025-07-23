@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Blindagem</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="container">
+    <h1>Controle de Blindagem</h1>
+
+    <form id="form-carro">
+      <input type="text" id="placa" placeholder="Placa do carro" required>
+      <input type="date" id="dataBlindagem" required>
+      <input type="file" id="imagemCarro" accept="image/*" required>
+      <button type="submit">Cadastrar Carro</button>
+    </form>
+<div id="filtros">
+  <button onclick="filtrar('vencido')">🔴 Vencido</button>
+  <button onclick="filtrar('proximo')">🟡 Próximo</button>
+  <button onclick="filtrar('emdia')">🟢 Em Dia</button>
+  <button onclick="filtrar('todos')">📋 Todos</button>
+</div>
+<div id="exportar">
+  <button onclick="exportarExcel()">📊 Exportar Excel</button>
+  <button onclick="exportarPDF()">📄 Exportar PDF</button>
+</div>
+    <div id="resultado" class="card" style="display: none;">
+      <img id="previewImagem" alt="Imagem do carro">
+      <div class="info">
+        <p id="infoPlaca"></p>
+        <p id="infoData"></p>
+        <p id="infoDiasRestantes"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
